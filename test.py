@@ -120,7 +120,6 @@ class conn ():
                 schedule.run_pending()
                 time.sleep(1)
             except (IndexError,NoSuchElementException) as a:
-                print()
                 print(a)
                 logging.warning('quiting')
                 self.driver.quit()
