@@ -35,14 +35,14 @@ class conn ():
 ##        self.trans()
 ##        self.his()
 ####        self.withd()
-    def withd(self,amount):
+    def withdrawal(self,amount):
         self.driver.get("https://www.sportpesa.co.ke/withdraws")
 ##        self.driver.find_element_by_link_text('withdraw').click()
         self.driver.implicitly_wait(10)
         self.driver.find_element_by_name('amount').click()
         self.driver.find_element_by_name('amount').send_keys(amount)
         self.driver.find_element_by_name('amount').send_keys(Keys.RETURN)
-    def trans(self):
+    def transaction(self):
         self.driver.get("https://www.sportpesa.co.ke/transactions")
         self.driver.implicitly_wait(10)
         for i in range(1,16):
@@ -58,7 +58,7 @@ class conn ():
             except:
                 bet_id=time.time()
             print(tr_id,bet_time,bet_desc,amount,bet_id)
-    def his(self):
+    def history(self):
 ##        self.driver.find_element(By.XPATH, '//a[@class="bet-history"]').click()
         self.driver.get("https://www.sportpesa.co.ke/bets/history")
         for i in range(1,16):
